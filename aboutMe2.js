@@ -32,7 +32,11 @@ const displayData = (data) => {
   console.log(data);
 };
 
-fetchName(displayData);
-fetchAge(displayData);
-fetchLocation(displayData);
-fetchHobbies(displayData);
+fetchName((displayData) => {
+    fetchAge((displayData) => {
+        fetchLocation((displayData) => {
+            fetchHobbies(displayData);
+        });
+    });
+});
+
