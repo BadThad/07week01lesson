@@ -1,41 +1,36 @@
-const fetchName = (displayData) => {
+const fetchName = (callback) => {
   setTimeout(() => {
-    const myName = "My name is Peter Fänge.";
-    displayData(myName);
+    console.log("My name is Peter Fänge.");
+    callback();
   }, 1000);
 };
 
-const fetchAge = (displayData) => {
+const fetchAge = (callback) => {
   setTimeout(() => {
-    const age = "I a 36 years old.";
-    displayData(age);
+    console.log("I a 36 years old.");
+    callback();
   }, 1000);
 };
 
-const fetchLocation = (displayData) => {
+const fetchLocation = (callback) => {
   setTimeout(() => {
-    const location =
-      "I was born in Peshawar, Pakistan but I now i live in Viken, Sweden.";
-    displayData(location);
+    console.log("I was born in Peshawar, Pakistan but I now i live in Viken, Sweden.");
+    callback();
   }, 1000);
 };
 
-const fetchHobbies = (displayData) => {
+const fetchHobbies = (callback) => {
   setTimeout(() => {
-    const hobbies =
-      "My hobbies include reading, gaming, gardening, and woodwork.";
-    displayData(hobbies);
+    console.log("My hobbies include reading, gaming, gardening, and woodwork.");
+    callback();
   }, 1000);
 };
 
-const displayData = (data) => {
-  console.log(data);
-};
-
-fetchName((displayData) => {
-    fetchAge((displayData) => {
-        fetchLocation((displayData) => {
-            fetchHobbies(displayData);
+fetchName(() => {
+    fetchAge(() => {
+        fetchLocation(() => {
+            fetchHobbies(() => {}
+          );
         });
     });
 });
